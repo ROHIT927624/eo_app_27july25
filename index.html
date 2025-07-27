@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>Even Odd Finder app by Kamal Sir</title>
+	<style>
+		* { font-size: 60px; text-align:center;}
+		body { background-color: azure; }
+	</style>
+</head>
+
+<body>
+	<h1>Even Odd Finder</h1>
+	<form onsubmit="find(event)">
+		<input type="number" id="num" placeholder="Enter integer" />
+		<br/><br/>
+		<input type="submit" value="Find Even/Odd" />
+	</form>	
+
+	<h2 id="msg"></h2>
+
+	<script>
+		function find(event){
+			event.preventDefault();
+
+			let num = document.getElementById("num");
+			let msg = document.getElementById("msg");
+
+			if(num.value === ""){
+				alert("Please enter an integer");
+				msg.innerHTML = "";
+				num.focus();
+				return;
+			}
+
+			let n = parseInt(num.value);
+			if(n % 2 === 0){
+				msg.innerHTML = "Even";
+			} else {
+				msg.innerHTML = "Odd";
+			}
+		}
+	</script>
+</body>
+</html>
